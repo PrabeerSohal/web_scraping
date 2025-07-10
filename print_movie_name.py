@@ -4,9 +4,7 @@ from bs4 import BeautifulSoup
 from tqdm import tqdm   
 import datetime
 import requests
-import os
 
-dataset_location = os.path.realpath(os.path.join(os.path.dirname(__file__), "DataSets"))
 current_year = int(datetime.datetime.now().year)
 url = "https://www.imdb.com/search/title/?release_date=2024-01-01"
 headers = {
