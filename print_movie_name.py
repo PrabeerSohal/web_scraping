@@ -1,7 +1,7 @@
 
 import sys
 from bs4 import BeautifulSoup
-from tqdm import tqdm
+from tqdm import tqdm   
 import datetime
 import requests
 import os
@@ -20,5 +20,8 @@ soup = BeautifulSoup(text, "lxml")
 # print(soup.find('title').text)
 i = 1
 movieList = soup.find_all('h3', attrs={'class':'ipc-title__text'})
-for div_item in (movieList):
-    print(div_item)
+output = []
+for div_item in tqdm(movieList):
+    output.append(div_item.text)
+for i in output:
+    print(i)
